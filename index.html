@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Online CV</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <div class="App">
+    <header class="App-header">
+      <nav>
+        <ul>
+          <li><a href="#about"><i class="fas fa-user"></i> About Me</a></li>
+          <li><a href="#education"><i class="fas fa-graduation-cap"></i> Education</a></li>
+          <li><a href="#experience"><i class="fas fa-briefcase"></i> Experience</a></li>
+          <li><a href="#certifications"><i class="fas fa-certificate"></i> Certifications</a></li>
+          <li><a href="#skills"><i class="fas fa-tools"></i> Skills</a></li>
+          <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section id="Introduction">
+      <div class="container">
+        <div class="slider">
+          <div class="slide active">
+            <div class="hello">
+              <div class="split-container">
+                <div class="profile">
+                  <img src="picture/Profile.jpg" alt="Profile Picture">
+                </div>
+                <div>
+                  <h1>Hello World!, I'm </h1>
+                  <h1>Ralph Rey M. Balaoro</h1>
+                  <h1>Undergraduate | BS Computer Science</h1>
+            <div class="quote">
+              <p class="function"> function <span class="quote-name">Quote()</span> </p>
+              <p class="words"> “Programming is a skill best acquired by practice and example rather than from a books.”; <span class="cmmnt-name">// - Alan Turing</span></p>
+              <p class="words"> <span class="quote-name">return</span>  'Alan Turing';</p>
+              <p class="function"> }; </p>
+            </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="slide">
+            <div class="quote">
+              <p class="function"> function <span class="quote-name">Quote()</span> </p>
+              <p class="words"> “Programming is a skill best acquired by practice and example rather than from a books.”; <span class="cmmnt-name"> - Alan Turing</span></p>
+              <p class="words"> <span class="quote-name">return</span>  Alan Turing;</p>
+              <p class="function"> }; </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        let slideInterval;
+
+        function changeSlide(direction) {
+          slides[currentSlide].classList.remove('active');
+          currentSlide = (currentSlide + direction + slides.length) % slides.length;
+          slides[currentSlide].classList.add('active');
+        }
+
+        function startSlideShow() {
+          slideInterval = setInterval(() => {
+            changeSlide(1);
+          }, 10000);
+        }
+
+        function stopSlideShow() {
+          clearInterval(slideInterval);
+        }
+
+        // Start the slideshow initially
+        startSlideShow();
+
+        // Pause the slideshow on hover and resume on mouse leave
+        document.querySelector('.slider').addEventListener('mouseover', stopSlideShow);
+        document.querySelector('.slider').addEventListener('mouseout', startSlideShow);
+
+        // Add event listener for right side click to go to the next slide
+        document.querySelector('.container').addEventListener('click', (event) => {
+          const containerWidth = event.currentTarget.offsetWidth;
+          const clickX = event.clientX - event.currentTarget.getBoundingClientRect().left;
+
+          if (clickX > containerWidth / 2) {
+            changeSlide(1);
+          }
+        });
+      </script>
+    
+    <section id="about">
+      <h2>About Me</h2>
+      <p>Hi! I'm Ralph Rey M. Balaoro, a 19-year-old undergraduate student at CCDI, Sorsogon. I am passionate about programming and technology. I have experience in various programming languages and am always eager to learn more.</p>  
+    </section>
+
+    <section id="education">
+      <h2>Education</h2>
+      <ul>
+        <li><strong>Tertiary:</strong> Computer Communication Development Institute, Sorsogon - Bachelor of Science in Computer Science (Undergraduate)</li>
+        <li><strong>Senior High School:</strong> Caditaan National High School, General Academic Strand (2019-2021)</li>
+        <li><strong>High School:</strong> Caditaan National High School, Grade 9-10 I.C.T. (2015-2019)</li>
+        <li><strong>Elementary:</strong> Caditaan Elementary School (2009-2015)</li>
+      </ul>
+    </section>
+
+    <section id="experience">
+      <h2>Experience</h2>
+      <ul>
+        <li><strong>CCDI Intramurals 2023:</strong> Speed Programming</li>
+        <li><strong>CCDI Intramurals 2024:</strong> Visual Programming</li>
+        <li><strong>Google - Foundation:</strong> Data, Everywhere</li>
+      </ul>
+    </section>
+
+    <section id="certifications">
+      <h2>Certifications</h2>
+      <div class="image-container">
+        <img src="cert/Making a CV using Canva 2025.jpg" alt="Making a CV using Canva - 2025" onclick="openModal(this)">
+        <img src="cert/Computer Hardware Basics - 2025.jpg" alt="Computer Hardware Basics - 2025" onclick="openModal(this)">
+        <img src="cert/Ethical Hacking 2025.jpg" alt="Ethical Hacking - 2025" onclick="openModal(this)">
+        <img src="cert/Python Essentials 1 - 2025.jpg" alt="Python Essentials - 2025" onclick="openModal(this)">
+      </div>
+
+      <!-- Modal Structure -->
+      <div id="imageModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <div class="modal-content">
+          <p id="modalTitle" style="color: white; text-align: center; margin-bottom: 10px;"></p>
+          <img id="modalImage" alt="Certificate">
+          <i class="fas fa-chevron-left modal-nav left" onclick="changeImage(-1)"></i>
+          <i class="fas fa-chevron-right modal-nav right" onclick="changeImage(1)"></i>
+        </div>
+      </div>
+
+      <script>
+        let currentImageIndex = 0;
+        const images = Array.from(document.querySelectorAll('.image-container img'));
+
+        function openModal(image) {
+          const modal = document.getElementById('imageModal');
+          const modalImage = document.getElementById('modalImage');
+          const modalTitle = document.getElementById('modalTitle');
+          currentImageIndex = images.indexOf(image);
+          modal.style.display = 'flex';
+          modalImage.src = image.src;
+          modalTitle.textContent = image.alt; // Set the title based on the alt attribute
+        }
+
+        function closeModal() {
+          const modal = document.getElementById('imageModal');
+          modal.style.display = 'none';
+        }
+
+        function changeImage(direction) {
+          currentImageIndex = (currentImageIndex + direction + images.length) % images.length;
+          const newImage = images[currentImageIndex];
+          const modalImage = document.getElementById('modalImage');
+          const modalTitle = document.getElementById('modalTitle');
+          modalImage.src = newImage.src;
+          modalTitle.textContent = newImage.alt;
+        }
+      </script>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <div class="skills-section">
+        <div class="skill" data-level="80">
+          <h3><i class="fas fa-code"></i> C#</h3>
+          <div class="skill-bar">
+            <div class="skill-bar-fill"></div>
+          </div>
+        </div>
+        <div class="skill" data-level="50">
+          <h3><i class="fab fa-python"></i> Python</h3>
+          <div class="skill-bar">
+            <div class="skill-bar-fill"></div>
+          </div>
+        </div>
+        <div class="skill" data-level="50">
+          <h3><i class="fab fa-java"></i> JavaScript</h3>
+          <div class="skill-bar">
+            <div class="skill-bar-fill"></div>
+          </div>
+        </div>
+        <div class="skill" data-level="70">
+          <h3><i class="fas fa-database"></i> SQL</h3>
+          <div class="skill-bar">
+            <div class="skill-bar-fill"></div>
+          </div>
+        </div>
+        <div class="skill" data-level="50">
+          <h3><i class="fas fa-desktop"></i> OS Installation</h3>
+          <div class="skill-bar">
+            <div class="skill-bar-fill"></div>
+          </div>
+        </div>
+        <div class="skill" data-level="70">
+          <h3><i class="fas fa-network-wired"></i> Networking</h3>
+          <div class="skill-bar">
+            <div class="skill-bar-fill"></div>
+          </div>
+        </div>
+        <div class="skill" data-level="80">
+          <h3><i class="fas fa-file-excel"></i> Microsoft Excel</h3>
+          <div class="skill-bar">
+            <div class="skill-bar-fill"></div>
+          </div>
+        </div>
+        <div class="skill" data-level="80">
+          <h3><i class="fas fa-file-word"></i> Microsoft Word</h3>
+          <div class="skill-bar">
+            <div class="skill-bar-fill"></div>
+          </div>
+        </div>
+        <div class="skill" data-level="80">
+          <h3><i class="fas fa-file-powerpoint"></i> Microsoft PowerPoint</h3>
+          <div class="skill-bar">
+            <div class="skill-bar-fill"></div>
+          </div>
+        </div>
+        <div class="skill" data-level="80">
+          <h3><i class="fas fa-file-pdf"></i> Microsoft Publisher</h3>
+          <div class="skill-bar">
+            <div class="skill-bar-fill"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <ul>
+        <li><strong>Email:</strong> your-email@example.com</li>
+        <li><strong>Phone:</strong> +123 456 7890</li>
+        <li><strong>Address:</strong> Your Address Here</li>
+      </ul>
+    </section>
+  </div>
+
+  <script>
+    // Highlight the active navigation button based on the section in view
+    const navLinks = document.querySelectorAll('.App-header ul li a');
+    const sections = document.querySelectorAll('section');
+
+    function setActiveLink() {
+      let index = sections.length;
+
+      while (--index && window.scrollY + 50 < sections[index].offsetTop) {}
+
+      navLinks.forEach((link) => link.classList.remove('active'));
+      navLinks[index].classList.add('active');
+    }
+
+    window.addEventListener('scroll', setActiveLink);
+  </script>
+</body>
+</html>

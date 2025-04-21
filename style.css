@@ -1,0 +1,358 @@
+/* Add animation for the aurora background */
+@keyframes auroraEffect {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+body {
+  background: rounded-gradient(135deg, #000000, #45555a, #f1f1f1);
+  background-size: 200% 200%;
+  animation: auroraEffect 10s ease infinite;
+  color: #fff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  padding-top: 80px; /* Adjust this value based on the height of the fixed menu */
+}
+
+/* Make the navigation menu fixed at the top */
+.App-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000; /* Ensure it stays above other elements */
+  background: #08022b;
+  color: #fff;
+  padding: 1rem 0;
+  text-align: center;
+}
+
+.App-header ul {
+  list-style: none;
+}
+
+.App-header ul li {
+  display: inline;
+  margin: 0 10px;
+  font-weight: 500;
+}
+
+.App-header ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Add hover effect for navigation menu items */
+.App-header ul li a:hover {
+  color: #04858a; /* Highlight color on hover */
+}
+
+/* Highlight the active navigation button */
+.App-header ul li a.active {
+  color: #00c3ff; /* Highlight color */
+  font-weight: bold;
+}
+
+.App-header ul li a i {
+  margin-right: 20px;
+}
+
+section {
+  padding: 2%;
+  max-width: 100%;
+}
+
+section h2 {
+  border-bottom: 2px solid #ffffff;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  margin-bottom: 0.5rem;
+}
+
+.skills-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+.skill {
+  width: 45%;
+  margin-bottom: 1rem;
+}
+
+.skill h3 {
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.skill h3 i {
+  margin-right: 10px;
+}
+
+.skill-bar {
+  background: #ddd;
+  border-radius: 5px;
+  overflow: hidden;
+  height: 10px;
+}
+
+.skill-bar-fill {
+  height: 100%;
+  background: #4caf50;
+  width: 0;
+  transition: width 0.5s ease-in-out;
+}
+
+.skill[data-level="80"] .skill-bar-fill {
+  width: 80%;
+}
+
+.skill[data-level="70"] .skill-bar-fill {
+  width: 70%;
+}
+
+.skill[data-level="60"] .skill-bar-fill {
+  width: 60%;
+}
+
+.skill[data-level="50"] .skill-bar-fill {
+  width: 50%;
+}
+
+/* Adjust the image container to display images in columns */
+.image-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Creates responsive columns */
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+/* Add hover effect to highlight images */
+.image-container img:hover {
+  transform: scale(1.05); /* Slightly enlarge the image */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Modal styles */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1000; /* Sit on top */
+  left: 50%; /* Center horizontally */
+  top: 50%; /* Center vertically */
+  transform: translate(-50%, -50%); /* Adjust for centering */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0, 0, 0, 0.8); /* Black background with opacity */
+  border-radius: 20px; /* Rounded corners */
+}
+
+.modal-content {
+  max-width: 100%;
+  max-height: 80%;
+  padding: 0; /* Remove any padding to maximize space */
+  margin: 0; /* Center the modal without extra spacing */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+}
+
+/* Updated Modal styles for maximizing image size */
+.modal-content img {
+  width: auto; /* Adjust width dynamically */
+  height: auto; /* Adjust height dynamically */
+  max-width: 100%; /* Ensure it fits within the screen width */
+  max-height: 100%; /* Ensure it fits within the screen height */
+  object-fit: contain; /* Maintain aspect ratio */
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  color: #fff;
+  font-size: 35px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Add styles for modal navigation icons */
+.modal-nav {
+  position: absolute;
+  top: 55%;
+  transform: translateY(-50%);
+  font-size: 3rem;
+  color: rgb(161, 160, 177);
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.modal-nav.left {
+  left: 25px;
+}
+
+.modal-nav.right {
+  right: 25px;
+}
+
+.modal-nav:hover {
+  color: #170468;
+}
+
+/* Add fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Added styles to position the profile section on the left side */
+.profile {
+  float: left;
+  margin: 5% 5% 5% 5%; /* Add margin to the right and bottom */
+}
+
+.profile img {
+  width: 250px;
+  height: auto;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.quote {
+  background-color: #050046;
+  padding: 3%;
+  border-radius: 20px;
+  font-family:'Courier New', Courier, monospace;
+  height: auto;
+}
+
+.words {
+  font-size: 1.2rem;
+  color: #ffffff;
+  text-align: left;
+  margin-left: 5%;
+}
+
+.function {
+  font-size: 1.2rem;
+  color: #5d0069;
+  font-weight: bolder;
+  text-align: left;
+}
+
+.quote-name {
+  color: #ff4500;
+}
+
+.cmmnt-name {
+  color: #838282;
+}
+
+.container {
+  display: absolute;
+  align-items: center;
+}
+
+.hello {
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); /* Aurora-like gradient */
+  font-size: 1.5rem; /* Increase font size for better readability */
+  color: #ffffff; /* Use a darker color for better contrast */
+  text-align: left; /* Center align the text */
+  margin: 20px;
+  padding: 2%; /* Add padding for spacing */
+  border-radius: 20px; /* Add rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add hover transition */
+  height: auto;
+}
+
+/* Add styles for the "hello" section to match the provided design */
+.hello h1:first-of-type {
+  font-size: 1.5rem;
+  color: #ffffff;
+  margin: 0px;
+}
+
+.hello h1:nth-of-type(2) {
+  font-size: 4rem;
+  font-weight: bold;
+  color: #006891;
+  margin: 0px;
+}
+
+.hello h1:nth-of-type(3) {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #d9d9d9;
+  margin: 10px;
+}
+
+/* Add styles for the slider in the About section */
+.slider {
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+.slide {
+  display: none;
+  width: 100%;
+  height: auto;
+  animation: fadeIn 0.5s ease-in-out;
+  align-content: center;
+}
+
+.slide.active {
+  display: block;
+}
+
+/* Added a new class to divide the picture and text */
+.split-container {
+  display: flex;
+  flex-direction: row; /* Default horizontal layout */
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px; /* Add spacing between items */
+}
+
+/* Add a media query to handle text overflow */
+@media (max-width: 768px) {
+  .split-container {
+    flex-direction: column; /* Switch to vertical layout */
+    align-items: center; /* Center align items vertically */
+  }
+}
