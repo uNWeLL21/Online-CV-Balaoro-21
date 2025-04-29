@@ -1,32 +1,35 @@
 /* Add animation for the aurora background */
 @keyframes auroraEffect {
   0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
+  /* 50% { background-position: 100% 50%; } */
   100% { background-position: 0% 50%; }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  background: linear-gradient(135deg, #003a3a, #001f53, #76B2FE);
   background-size: 200% 200%;
   animation: auroraEffect 10s ease infinite;
   color: #fff;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  margin: 0;
+  margin: 20px;
   padding: 0;
   line-height: 1.6;
-  padding-top: 80px; /* Adjust this value based on the height of the fixed menu */
 }
 
 /* Make the navigation menu fixed at the top */
 .App-header {
-  position: fixed;
   top: 0;
   width: 100%;
   z-index: 1000; /* Ensure it stays above other elements */
-  background: #08022b;
+  background: #004257;
   color: #fff;
   padding: 1rem 0;
   text-align: center;
+  border-radius: 20px;
 }
 
 .App-header ul {
@@ -46,12 +49,12 @@ body {
 
 /* Add hover effect for navigation menu items */
 .App-header ul li a:hover {
-  color: #04858a; /* Highlight color on hover */
+  color: #00f7ff; /* Highlight color on hover */
 }
 
 /* Highlight the active navigation button */
 .App-header ul li a.active {
-  color: #00c3ff; /* Highlight color */
+  color: #00f7ff; /* Highlight color */
   font-weight: bold;
 }
 
@@ -60,14 +63,19 @@ body {
 }
 
 section {
-  padding: 2%;
+  padding-top: 5px;
+  padding-bottom: 10px;
+  padding-left: 3%;
+  padding-right: 3%;
   max-width: 100%;
+  background-color: #0000005e;
+  margin-top: 20px;
+  border-radius: 20px;
 }
 
 section h2 {
   border-bottom: 2px solid #ffffff;
   padding-bottom: 0.5rem;
-  margin-bottom: 1rem;
 }
 
 ul {
@@ -80,10 +88,10 @@ ul li {
 }
 
 .skills-section {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Create 3 columns */
+  gap: 20px; /* Add spacing between items */
+  justify-items: center; /* Center items horizontally */
 }
 
 .skill {
@@ -132,17 +140,28 @@ ul li {
   width: 50%;
 }
 
+/* Add styles for the skill container */
+.skill-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
 /* Adjust the image container to display images in columns */
 .image-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Creates responsive columns */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Creates responsive columns */
   gap: 1rem;
   margin-top: 1rem;
+  padding-right: 10px;
+  margin-bottom: 20px;
 }
 
 .image-container img {
   width: 100%;
-  height: auto;
+  height: 100%;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
 }
@@ -163,7 +182,7 @@ ul li {
   top: 50%; /* Center vertically */
   transform: translate(-50%, -50%); /* Adjust for centering */
   overflow: auto; /* Enable scroll if needed */
-  background-color: rgba(0, 0, 0, 0.8); /* Black background with opacity */
+  background-color: rgb(0, 72, 114); /* Black background with opacity */
   border-radius: 20px; /* Rounded corners */
 }
 
@@ -240,8 +259,11 @@ ul li {
 
 /* Added styles to position the profile section on the left side */
 .profile {
-  float: left;
-  margin: 5% 5% 5% 5%; /* Add margin to the right and bottom */
+  display: flex;
+  padding-left: 10%;
+  margin-bottom: 10px;
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Center align items */
 }
 
 .profile img {
@@ -252,7 +274,7 @@ ul li {
 }
 
 .quote {
-  background-color: #050046;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); /* Aurora-like gradient */
   padding: 3%;
   border-radius: 20px;
   font-family:'Courier New', Courier, monospace;
@@ -268,7 +290,7 @@ ul li {
 
 .function {
   font-size: 1.2rem;
-  color: #5d0069;
+  color: #c96b00;
   font-weight: bolder;
   text-align: left;
 }
@@ -284,6 +306,9 @@ ul li {
 .container {
   display: absolute;
   align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
 
 .hello {
@@ -291,8 +316,7 @@ ul li {
   font-size: 1.5rem; /* Increase font size for better readability */
   color: #ffffff; /* Use a darker color for better contrast */
   text-align: left; /* Center align the text */
-  margin: 20px;
-  padding: 2%; /* Add padding for spacing */
+  padding: 4%; /* Add padding for spacing */
   border-radius: 20px; /* Add rounded corners */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
   transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add hover transition */
@@ -346,7 +370,7 @@ ul li {
   flex-direction: row; /* Default horizontal layout */
   justify-content: space-between;
   align-items: center;
-  gap: 20px; /* Add spacing between items */
+  gap: 1px; /* Add spacing between items */
 }
 
 /* Add a media query to handle text overflow */
@@ -354,5 +378,137 @@ ul li {
   .split-container {
     flex-direction: column; /* Switch to vertical layout */
     align-items: center; /* Center align items vertically */
+  }
+}
+
+/* Add styles for the education section to match the provided design */
+.education-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+.education-item {
+  width: 45%;
+  margin-bottom: 1rem;
+}
+
+.education-item h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.education-item p {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+  color: #d9d9d9;
+}
+
+/* Add styles for the typing animation */
+.typed {
+  font-size: 1.5rem;
+  color: #ffffff;
+  display: inline;
+}
+
+.typed-cursor {
+  font-size: 1.5rem;
+  color: #ffffff;
+  display: inline;
+  animation: blink 0.7s step-end infinite;
+}
+
+@keyframes blink {
+  from, to {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Updated styles for circular progress bars */
+.circular-skill {
+  position: relative;
+  width: 150px; /* Increase size */
+  height: 150px; /* Increase size */
+  margin-right: 20%;
+}
+
+.circular-skill svg {
+  transform: rotate(-90deg);
+  width: 100%;
+  height: 100%;
+}
+
+.circular-skill .circle {
+  stroke-dasharray: 283;
+  stroke-dashoffset: 283;
+  stroke-width: 10;
+  fill: none;
+  stroke: #00bcd4;
+  transition: stroke-dashoffset 1s ease-out;
+}
+
+.circular-skill .background {
+  stroke: #e6e6e6;
+  stroke-width: 10;
+  fill: none;
+}
+
+.circular-skill .percentage {
+  position: absolute;
+  top: 68%;
+  left: 33%;
+  transform: translate(-50%, -50%);
+  font-size: 1rem;
+  color: #ffffff;
+  text-align: center;
+  font-weight: bold;
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.3s ease;
+}
+
+.circular-skill h3 {
+  position: absolute;
+  top: 40%;
+  left: 33%;
+  transform: translate(-50%, -50%);
+  font-size: 2.5rem;
+  color: #ffffff;
+  text-align: center;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.circular-skill .skill-label {
+  position: absolute;
+  top: 50%;
+  left: 110%;
+  transform: translateX(-50%);
+  font-size: 1rem;
+  font-weight: bold;
+  color: #ffffff;
+  text-align: left;
+}
+
+.circular-skill:hover h3 {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.circular-skill:hover .percentage {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+@keyframes progress-animation {
+  from {
+    stroke-dashoffset: 440;
+  }
+  to {
+    stroke-dashoffset: calc(440 - (440 * var(--progress)) / 100);
   }
 }
