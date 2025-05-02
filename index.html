@@ -6,22 +6,26 @@
   <title>Online CV</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <script type="text/javascript" src="js/jquery.particleground.js"></script>
+  <script type="text/javascript" src="js/demo.js"></script>
 </head>
-<body>
-  <div class="App">
-    <header class="App-header">
-      <nav>
-        <ul>
-          <li><a href="#about"><i class="fas fa-user"></i> About Me</a></li>
-          <li><a href="#education"><i class="fas fa-graduation-cap"></i> Education</a></li>
-          <li><a href="#experience"><i class="fas fa-briefcase"></i> Experience</a></li>
-          <li><a href="#certifications"><i class="fas fa-certificate"></i> Certifications</a></li>
-          <li><a href="#skills"><i class="fas fa-tools"></i> Skills</a></li>
-          <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
-        </ul>
-      </nav>
-    </header>
 
+<body>
+  
+  <header class="App-header">
+    <nav>
+      <ul>
+        <li><a href="#about"><i class="fas fa-user"></i> About Me</a></li>
+        <li><a href="#education"><i class="fas fa-graduation-cap"></i> Education</a></li>
+        <li><a href="#experience"><i class="fas fa-briefcase"></i> Experience</a></li>
+        <li><a href="#certifications"><i class="fas fa-certificate"></i> Certifications</a></li>
+        <li><a href="#skills"><i class="fas fa-tools"></i> Skills</a></li>
+        <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="App">
     <div class="container">
       <div class="slider">
         <div class="slide active">
@@ -192,7 +196,7 @@
         <img src="cert/Python Essentials 1 - 2025.jpg" alt="Python Essentials - 2025" onclick="openModal(this)">
         <img src="cert/Data_Analytics_Essentials_certificate_ralphreym-balaoro-gmail-com_913cd962-341f-4a52-87d1-683733fe1228_page-0001.jpg" alt="Data Analytics Essentials - 2025" onclick="openModal(this)">
         <img src="cert/Making a CV using Canva 2025.jpg" alt="Making a CV using Canva - 2025" onclick="openModal(this)">
-        <img src="cert/Design Thinking Hackathon.jpg" alt="Design Thinking Hackathon - 2025" onclick="openModal(this)">
+        <img src="cert/Design Thinking Hackathon.jpg" alt="Design Thinking Hackathon - 2024" onclick="openModal(this)">
       </div>
 
       <!-- Modal Structure -->
@@ -405,7 +409,7 @@
     function setActiveLink() {
       let index = sections.length;
 
-      while (--index && window.scrollY + 50 < sections[index].offsetTop) {}
+      while (--index && (window.scrollY) + 50 < sections[index].offsetTop) {}
 
       navLinks.forEach((link) => link.classList.remove('active'));
       navLinks[index].classList.add('active');

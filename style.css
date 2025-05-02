@@ -7,29 +7,33 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 130px; /* Adjust based on your header height */
 }
 
 body {
-  background: linear-gradient(135deg, #003a3a, #001f53, #76B2FE);
-  background-size: 200% 200%;
-  animation: auroraEffect 10s ease infinite;
+  background: url('picture/BG02.jpg') no-repeat center center fixed;
+  background-size: cover;
   color: #fff;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  margin: 20px;
+  margin: 0px;
+  margin-top: 130px;
   padding: 0;
   line-height: 1.6;
+  position: relative;
+  overflow-x: hidden;
+  z-index: 0;
 }
 
 /* Make the navigation menu fixed at the top */
 .App-header {
+  position: fixed;
   top: 0;
   width: 100%;
   z-index: 1000; /* Ensure it stays above other elements */
-  background: #004257;
+  background: #000000c9;
   color: #fff;
   padding: 1rem 0;
   text-align: center;
-  border-radius: 20px;
 }
 
 .App-header ul {
@@ -49,12 +53,12 @@ body {
 
 /* Add hover effect for navigation menu items */
 .App-header ul li a:hover {
-  color: #00f7ff; /* Highlight color on hover */
+  color: #00eeff9a; /* Highlight color on hover */
 }
 
 /* Highlight the active navigation button */
 .App-header ul li a.active {
-  color: #00f7ff; /* Highlight color */
+  color: #00eeff9a; /* Highlight color */
   font-weight: bold;
 }
 
@@ -65,17 +69,18 @@ body {
 section {
   padding-top: 5px;
   padding-bottom: 10px;
-  padding-left: 3%;
-  padding-right: 3%;
+  padding-left: 5%;
+  padding-right: 5%;
   max-width: 100%;
-  background-color: #0000005e;
-  margin-top: 20px;
+  background-color: #00000071;
+  margin: 40px;
   border-radius: 20px;
 }
 
 section h2 {
   border-bottom: 2px solid #ffffff;
   padding-bottom: 0.5rem;
+  text-align: center;
 }
 
 ul {
@@ -307,16 +312,15 @@ ul li {
   display: absolute;
   align-items: center;
   justify-content: center;
-  margin-top: 20px;
-  margin-bottom: 10px;
+  margin: 40px;
 }
 
 .hello {
-  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); /* Aurora-like gradient */
-  font-size: 1.5rem; /* Increase font size for better readability */
+  background: linear-gradient(135deg, #0f202783, #203a436e, #2c536485); /* Aurora-like gradient */
+  font-size: 1.5rem; /* Increase font si  ze for better readability */
   color: #ffffff; /* Use a darker color for better contrast */
   text-align: left; /* Center align the text */
-  padding: 4%; /* Add padding for spacing */
+  padding: 5cqmin; /* Add padding for spacing */
   border-radius: 20px; /* Add rounded corners */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
   transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add hover transition */
