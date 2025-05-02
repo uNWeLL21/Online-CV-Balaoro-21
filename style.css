@@ -7,21 +7,19 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 130px; /* Adjust based on your header height */
+  scroll-padding-top: 100px; /* Adjust based on your header height */
 }
 
 body {
-  background: url('picture/BG02.jpg') no-repeat center center fixed;
-  background-size: cover;
+  background: linear-gradient(135deg, #000133, #00869e, #013449); /* Aurora-like gradient */
   color: #fff;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0px;
-  margin-top: 130px;
   padding: 0;
   line-height: 1.6;
   position: relative;
   overflow-x: hidden;
-  z-index: 0;
+  z-index: 1000;
 }
 
 /* Make the navigation menu fixed at the top */
@@ -32,8 +30,8 @@ body {
   z-index: 1000; /* Ensure it stays above other elements */
   background: #000000c9;
   color: #fff;
-  padding: 1rem 0;
-  text-align: center;
+  /* text-align: right; */
+  padding-right: 100px;
 }
 
 .App-header ul {
@@ -42,7 +40,7 @@ body {
 
 .App-header ul li {
   display: inline;
-  margin: 0 10px;
+  margin: 0 15px;
   font-weight: 500;
 }
 
@@ -63,7 +61,7 @@ body {
 }
 
 .App-header ul li a i {
-  margin-right: 20px;
+  margin-right: 5px;
 }
 
 section {
@@ -264,26 +262,26 @@ ul li {
 
 /* Added styles to position the profile section on the left side */
 .profile {
-  display: flex;
-  padding-left: 10%;
-  margin-bottom: 10px;
-  flex-direction: column; /* Stack items vertically */
   align-items: center; /* Center align items */
+  z-index: 999;
 }
 
 .profile img {
-  width: 250px;
+  width: 300px;
   height: auto;
   border-radius: 50%;
   object-fit: cover;
 }
 
 .quote {
-  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); /* Aurora-like gradient */
-  padding: 3%;
-  border-radius: 20px;
+  margin: 30px;
+  background: #000000b9;
   font-family:'Courier New', Courier, monospace;
   height: auto;
+  padding: 5%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  z-index: 999;
 }
 
 .words {
@@ -309,22 +307,29 @@ ul li {
 }
 
 .container {
+  background: url('picture/BG02.jpg') no-repeat center center fixed;
+  background-size: cover;
   display: absolute;
+  background-color: #00bcd4;
   align-items: center;
   justify-content: center;
-  margin: 40px;
+  width: 100%;
+  height: 100%;
+  padding-top: 100px;
+  z-index: 1000;
 }
 
 .hello {
-  background: linear-gradient(135deg, #0f202783, #203a436e, #2c536485); /* Aurora-like gradient */
+  z-index: 1000;
   font-size: 1.5rem; /* Increase font si  ze for better readability */
   color: #ffffff; /* Use a darker color for better contrast */
-  text-align: left; /* Center align the text */
-  padding: 5cqmin; /* Add padding for spacing */
-  border-radius: 20px; /* Add rounded corners */
+  text-align: left;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
   transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add hover transition */
   height: auto;
+  padding: 10%;
+  padding-top: 0px;
+  padding-bottom: 0px;
 }
 
 /* Add styles for the "hello" section to match the provided design */
@@ -374,7 +379,7 @@ ul li {
   flex-direction: row; /* Default horizontal layout */
   justify-content: space-between;
   align-items: center;
-  gap: 1px; /* Add spacing between items */
+  gap: 50px; /* Add spacing between items */
 }
 
 /* Add a media query to handle text overflow */
@@ -515,4 +520,77 @@ ul li {
   to {
     stroke-dashoffset: calc(440 - (440 * var(--progress)) / 100);
   }
+}
+
+/* Add styles for the experience section */
+.experience {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Creates responsive columns */
+  gap: 1rem;
+  margin-top: 1rem;
+  padding-right: 10px;
+  margin-bottom: 20px;
+}
+
+.experience-item {
+  background: #000000b9;
+  padding: 1rem;
+  border-radius: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Update styles for images in the experience-item to maximize their size */
+.experience-item img {
+  width: 100%;
+  height: 250px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.experience-item h4 {
+  font-weight: 100;
+  font-size: 12px;
+  margin-bottom: 0.5rem;
+}
+
+/* Add styles for the experience menu */
+.experience-menu {
+  display: flex;
+  justify-content: left;
+}
+
+.experience-menu ul {
+  list-style: none;
+}
+
+.experience-menu ul li {
+  cursor: pointer;
+  padding: 10px 20px;
+  background: #000000b9;
+  color: #fff;
+  transition: background 0.3s ease;
+}
+
+.experience-menu ul li a {
+  text-decoration: none;
+  color: inherit; 
+  font-weight: bold;
+}
+
+.experience-menu li:hover {
+  background: #00eeff9a;
+}
+
+.experience-menu li.active {
+  background: #00eeff9a;
+}
+
+/* Hide all experience sections by default */
+.experience {
+  display: none;
+}
+
+/* Show the active experience section */
+.experience.active {
+  display: grid;
 }

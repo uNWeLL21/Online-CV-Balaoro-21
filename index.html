@@ -9,9 +9,8 @@
   <script type="text/javascript" src="js/jquery.particleground.js"></script>
   <script type="text/javascript" src="js/demo.js"></script>
 </head>
-
 <body>
-  
+
   <header class="App-header">
     <nav>
       <ul>
@@ -27,27 +26,21 @@
 
   <div class="App">
     <div class="container">
-      <div class="slider">
-        <div class="slide active">
-          <div class="hello">
-            <div class="split-container">
-              <div class="profile">
-                <img src="picture/Profile.jpg" alt="Profile Picture">
-              </div>
-              <div>
-                <h1><span class="typed"></span><span class="typed-cursor">|</span></h1>
-                <h1>Ralph Rey M. Balaoro</h1>
-                <h1>Undergraduate | BS Computer Science</h1>
-              </div>
-            </div>
+      <div class="hello">
+        <div class="split-container">
+          <div class="profile">
+            <img src="picture/Profile.jpg" alt="Profile Picture">
           </div>
-        </div>
-        <div class="slide">
-          <div class="quote">
-            <p class="function"> function <span class="quote-name">Quote()</span> </p>
-            <p class="words"> “Programming is a skill best acquired by practice and example rather than from a books.”; <span class="cmmnt-name"> - Alan Turing</span></p>
-            <p class="words"> <span class="quote-name">return</span>  Alan Turing;</p>
-            <p class="function"> }; </p>
+          <div>
+            <h1><span class="typed"></span><span class="typed-cursor">|</span></h1>
+            <h1>Ralph Rey M. Balaoro</h1>
+            <h1>Undergraduate | BS Computer Science</h1>
+            <div class="quote">
+              <p class="function"> function <span class="quote-name">Quote()</span> </p>
+              <p class="words"> “Programming is a skill best acquired by practice and example rather than from a books.”; <span class="cmmnt-name"> - Alan Turing</span></p>
+              <p class="words"> <span class="quote-name">return</span>  Alan Turing;</p>
+              <p class="function"> }; </p>
+            </div>
           </div>
         </div>
       </div>
@@ -146,6 +139,31 @@
         window.addEventListener("scroll", playProgressAnimation);
       });
     </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const menuItems = document.querySelectorAll(".experience-menu li");
+        const experienceSections = document.querySelectorAll(".experience");
+
+        menuItems.forEach((item, index) => {
+          item.addEventListener("click", () => {
+            // Remove active class from all menu items and sections
+            menuItems.forEach((menu) => menu.classList.remove("active"));
+            experienceSections.forEach((section) => section.classList.remove("active"));
+
+            // Add active class to the clicked menu item and corresponding section
+            item.classList.add("active");
+            experienceSections[index].classList.add("active");
+          });
+        });
+
+        // Set the first tab as active by default
+        if (menuItems.length > 0 && experienceSections.length > 0) {
+          menuItems[0].classList.add("active");
+          experienceSections[0].classList.add("active");
+        }
+      });
+    </script>
     
     <section id="about">
       <h2>About Me</h2>
@@ -182,10 +200,60 @@
 
     <section id="experience">
       <h2>Experience</h2>
-      <ul>
-        <li><strong>CCDI Intramurals 2023:</strong> Speed Programming</li>
-        <li><strong>CCDI Intramurals 2024:</strong> Visual Programming</li>
-      </ul>
+      <nav>
+        <div class="experience-menu">
+          <ul><li><a href="#college">College</a></li></ul>
+          <ul><li><a href="#internship">Internship</a></li></ul>
+          <ul><li><a href="#past">Past</a></li></ul>
+        </div>
+      </nav>
+      <div class="experience" id="college">
+      </div>
+      <div class="experience" id="internship">
+
+        <div class="experience-item">
+          <a href="https://www.facebook.com/dictsorsogon/posts/pfbid02iVTDUr9DAXC8szFw5o1y81YBXaRKyd9Ln7mfN9V8psiZM6xofd4gLAVvUSKB1dFgl" target="_blank">
+            <img src="https://scontent.fmnl13-3.fna.fbcdn.net/v/t39.30808-6/486144600_1091109553060759_8659130921703598774_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeHj_SdhXMU-anCmaz4xtkhLKZWzdz1nEEcplbN3PWcQR2Wx4g2Wnudjz-JjEyDToa6hoVObig9TFuJKUkSSLvM4&_nc_ohc=gbTrYWur3w4Q7kNvwFWCzYK&_nc_oc=Adkk6z3p-PX_r4X7Lo2h-xwtSQZYDFWJO3cgdqFI1teKcyPufuH8uAi8PH4ec3ChVzU&_nc_zt=23&_nc_ht=scontent.fmnl13-3.fna&_nc_gid=RwtLMcA0o6sKWMkLBNO-Qg&oh=00_AfEcF5s1cErLW0UUteFyI-F7_3qtzFD93LDWnLqBDyLovQ&oe=681B3BC5" alt="𝗖𝗢𝗡𝗡𝗘𝗖𝗧𝗘𝗗 𝗦𝗢𝗥𝗦𝗢𝗚𝗢𝗡 | The 𝗗𝗜𝗖𝗧 𝗥𝗲𝗴𝗶𝗼𝗻 𝗩 𝗦𝗼𝗿𝘀𝗼𝗴𝗼𝗻">
+            <p><strong>𝗝𝗔𝗡𝗨𝗔𝗥𝗬 𝟭𝟲 𝟮𝟬𝟮𝟱 | 𝗗𝗜𝗖𝗧 𝗥𝗲𝗴𝗶𝗼𝗻 𝗩 𝗦𝗼𝗿𝘀𝗼𝗴𝗼𝗻</strong></p>
+          </a>
+          <h4>The DICT Region V Sorsogon Provincial Operations Office, under the ICT Literacy and Competency Development Bureau (ILCDB), proudly welcomes five Computer Science student interns from CCDI Sorsogon to our growing digital family!</h4>
+        </div>
+
+        <div class="experience-item">
+          <a href="https://www.facebook.com/dictsorsogon/posts/pfbid0fDDAyVaB4CkCYwj53rgvt18kMnxH66YcrhF2ciQPSMCaECMy3yDV72HUJ9ydoHdsl" target="_blank">
+            <img src="https://scontent.fmnl13-3.fna.fbcdn.net/v/t39.30808-6/486186621_1091734552998259_5750823446450278623_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeFKZSrmoMiqTBYFOlWgxTj4Xbp20-Ive4JdunbT4i97guzzUPPHtGBpt_AbnB5EsqgIpXJ4a1Wu152HLosWtQ2Q&_nc_ohc=kF3vPuDhFhUQ7kNvwGvANN9&_nc_oc=AdnJjVHs8SB-i547Xp9dC-NZLTlsUNGEwduBRKBKBb5rILuUaPbOGFovdSH73GPdx40&_nc_zt=23&_nc_ht=scontent.fmnl13-3.fna&_nc_gid=P8ADLdImp3SVQRtvjpARyA&oh=00_AfEotx3Mm-q85HFvfZiwZ01W6zT7yZtrOILsIOidV27L0Q&oe=681B0AEF" alt="𝗖𝗢𝗡𝗡𝗘𝗖𝗧𝗘𝗗 𝗦𝗢𝗥𝗦𝗢𝗚𝗢𝗡 | The 𝗗𝗜𝗖𝗧 𝗥𝗲𝗴𝗶𝗼𝗻 𝗩 𝗦𝗼𝗿𝘀𝗼𝗴𝗼𝗻">
+            <p>𝗖𝗼𝗱𝗲, 𝗠𝗼𝘃𝗲, 𝗜𝗻𝗻𝗼𝘃𝗮𝘁𝗲: 𝗘𝘅𝗽𝗹𝗼𝗿𝗶𝗻𝗴 𝘁𝗵𝗲 𝗕𝗮𝘀𝗶𝗰𝘀 𝗼𝗳 𝗠𝗼𝗯𝗶𝗹𝗲 𝗥𝗼𝗯𝗼𝘁𝗶𝗰𝘀</p>
+          </a>
+          <h4>As part of the 𝗦𝗼𝗿𝘀𝗼𝗴𝗼𝗻 𝗦𝘁𝗮𝘁𝗲 𝗨𝗻𝗶𝘃𝗲𝗿𝘀𝗶𝘁𝘆 𝗕𝘂𝗹𝗮𝗻 𝗖𝗮𝗺𝗽𝘂𝘀 - 𝗖𝗼𝗺𝗽𝘂𝘁𝗶𝗻𝗴 𝗦𝗼𝗰𝗶𝗲𝘁𝘆'𝘀 𝗖𝗜𝗖𝗧 𝗖𝗼𝗻𝗳𝗲𝗿𝗲𝗻𝗰𝗲 𝟮𝟬𝟮𝟱 with the theme “Journey Through Code: Unlocking the Fun in Tech,” we explored the fundamentals of mobile robotics, learned how coding drives automation, and discussed exciting career opportunities in robotics and emerging technologies.</h4>
+        </div>
+
+        <div class="experience-item">
+          <a href="https://www.facebook.com/dictsorsogon/posts/pfbid026WtH3upHaJUPoo6DWkQ4sWWFoQ4ZGMxHDFzBzQ7TwVFWi4RgiXt2RLbUV1ESNMBDl" target="_blank">
+            <img src="https://scontent.fmnl13-1.fna.fbcdn.net/v/t39.30808-6/486382504_1091725142999200_8359877440267569732_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeFSKFyw62ErQA-N_SaLGMUqqLr7Ip3M-wGouvsincz7AQMdLknhUeDSCcqb3wtrjjM8GpbesX9COw830FRncQjg&_nc_ohc=7PpkgnhEL4QQ7kNvwH-qF1T&_nc_oc=Adkky-OfbvSXmEvm5-aZg8c0WFyPyQbLBwtdfNubW4dvANu0l2Y4ThblckBkOr9En5w&_nc_zt=23&_nc_ht=scontent.fmnl13-1.fna&_nc_gid=EAZUbdLKprEDAL1-bsV0Fw&oh=00_AfHLBqcaVl9B55MwspKorsGktTNG01B3TkyaCy6flW04VQ&oe=681B1044" alt="𝗖𝗢𝗡𝗡𝗘𝗖𝗧𝗘𝗗 𝗦𝗢𝗥𝗦𝗢𝗚𝗢𝗡 | The 𝗗𝗜𝗖𝗧 𝗥𝗲𝗴𝗶𝗼𝗻 𝗩 𝗦𝗼𝗿𝘀𝗼𝗴𝗼𝗻">
+            <p>𝗙𝗲𝗯𝗿𝘂𝗮𝗿𝘆 𝟭𝟰 𝟮𝟬𝟮𝟱 | Kicking Off 𝗠𝗼𝗯𝗶𝗹𝗲 𝗥𝗼𝗯𝗼𝘁𝗶𝗰𝘀 𝟭𝟬𝟭 𝗧𝗿𝗮𝗶𝗻𝗶𝗻𝗴 for the DICT Sorsogon Interns from CCDI and SSU - Bulan Campus!</p>
+          </a>
+          <h4>𝗗𝗜𝗖𝗧 𝗥𝗲𝗴𝗶𝗼𝗻 𝗩 𝗦𝗼𝗿𝘀𝗼𝗴𝗼𝗻 celebrates another step toward digital inclusion with the successful implementation of the 𝗙𝗿𝗲𝗲 𝗪𝗶-𝗙𝗶 𝗳𝗼𝗿 𝗔𝗹𝗹 𝗣𝗿𝗼𝗴𝗿𝗮𝗺 in 𝗕𝗮𝗿𝗮𝗻𝗴𝗮𝘆 𝗡𝗮𝗯𝘂𝗿𝗮𝗰𝗮𝗻, 𝗠𝗮𝘁𝗻𝗼𝗴, 𝗦𝗼𝗿𝘀𝗼𝗴𝗼𝗻!</h4>
+        </div>
+
+        <div class="experience-item">
+          <a href="https://www.facebook.com/dictsorsogon/posts/pfbid02hNh6M8s4KUrPGoMjrdL7UAa4i216kty3SrWVNreDj2tKwqfvSVR8z7eEiHW9ergkl" target="_blank">
+            <img src="https://scontent.fmnl13-2.fna.fbcdn.net/v/t39.30808-6/486528380_1091726612999053_450359680862942703_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeHaXitWK5mxeenjCTamQNhSNBb5-ETomIo0Fvn4ROiYigbHUQaHrnGl8Tnq9UV2RuibJ-r_xeQQ_MnGHqhL4Uz-&_nc_ohc=v6901e7-4hEQ7kNvwFcOwv5&_nc_oc=AdlliZMSlRIo-tVeJC60ZoQYqOCeSj2GPVk4mcfCZ9Xrt7XFSaypxL3ddlD9Gd45Wds&_nc_zt=23&_nc_ht=scontent.fmnl13-2.fna&_nc_gid=ogkJNDfjeaG-oBpfuueE1g&oh=00_AfHBAkx3aCovKwK4NbO6cy5l4WrDuYXX6ZjfXEp3Syo1gQ&oe=681B2417" alt="𝗖𝗢𝗡𝗡𝗘𝗖𝗧𝗘𝗗 𝗦𝗢𝗥𝗦𝗢𝗚𝗢𝗡 | The 𝗗𝗜𝗖𝗧 𝗥𝗲𝗴𝗶𝗼𝗻 𝗩 𝗦𝗼𝗿𝘀𝗼𝗴𝗼𝗻">
+            <p>𝗙𝗲𝗯𝗿𝘂𝗮𝗿𝘆 𝟭𝟰, 𝟮𝟬𝟮𝟱 | The final day of the 𝗠𝗼𝗯𝗶𝗹𝗲 𝗥𝗼𝗯𝗼𝘁𝗶𝗰𝘀 𝟭𝟬𝟭 𝗧𝗿𝗮𝗶𝗻𝗶𝗻𝗴 at 𝗗𝗜𝗖𝗧 𝗦𝗼𝗿𝘀𝗼𝗴𝗼𝗻</p>
+          </a>
+          <h4>𝗗𝗜𝗖𝗧 𝗥𝗲𝗴𝗶𝗼𝗻 𝗩 𝗦𝗼𝗿𝘀𝗼𝗴𝗼𝗻 celebrates another step toward digital inclusion with the successful implementation of the 𝗙𝗿𝗲𝗲 𝗪𝗶-𝗙𝗶 𝗳𝗼𝗿 𝗔𝗹𝗹 𝗣𝗿𝗼𝗴𝗿𝗮𝗺 in 𝗕𝗮𝗿𝗮𝗻𝗴𝗮𝘆 𝗡𝗮𝗯𝘂𝗿𝗮𝗰𝗮𝗻, 𝗠𝗮𝘁𝗻𝗼𝗴, 𝗦𝗼𝗿𝘀𝗼𝗴𝗼𝗻!</h4>
+        </div>
+
+        <div class="experience-item">
+          <a href="https://www.facebook.com/dictsorsogon/posts/pfbid02iVTDUr9DAXC8szFw5o1y81YBXaRKyd9Ln7mfN9V8psiZM6xofd4gLAVvUSKB1dFgl" target="_blank">
+            <img src="https://scontent.fmnl13-4.fna.fbcdn.net/v/t39.30808-6/486047709_1091342729704108_6110188511037278792_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=127cfc&_nc_ohc=HbP3Lr0Y4q0Q7kNvwECMsk4&_nc_oc=AdnBhBQhPiEoh8C9VuvskSwoDzuFmzw7RrEbYlXRea1gfM5o9KW48e2qSWGyKcR-kRE&_nc_zt=23&_nc_ht=scontent.fmnl13-4.fna&_nc_gid=HpUtHpiHWSroPd78uIlzxw&oh=00_AfFmP1Ob88Y5bS_Jj5Dy2_vqqmyOv9P8HEGT-BjmdEjFLg&oe=681B3A2D" alt="𝗖𝗢𝗡𝗡𝗘𝗖𝗧𝗘𝗗 𝗦𝗢𝗥𝗦𝗢𝗚𝗢𝗡 | The 𝗗𝗜𝗖𝗧 𝗥𝗲𝗴𝗶𝗼𝗻 𝗩 𝗦𝗼𝗿𝘀𝗼𝗴𝗼𝗻">
+            <p>𝗖𝗢𝗡𝗡𝗘𝗖𝗧𝗘𝗗 𝗦𝗢𝗥𝗦𝗢𝗚𝗢𝗡 | The 𝗗𝗜𝗖𝗧 𝗥𝗲𝗴𝗶𝗼𝗻 𝗩 𝗦𝗼𝗿𝘀𝗼𝗴𝗼𝗻</p>
+          </a>
+          <h4>𝗗𝗜𝗖𝗧 𝗥𝗲𝗴𝗶𝗼𝗻 𝗩 𝗦𝗼𝗿𝘀𝗼𝗴𝗼𝗻 celebrates another step toward digital inclusion with the successful implementation of the 𝗙𝗿𝗲𝗲 𝗪𝗶-𝗙𝗶 𝗳𝗼𝗿 𝗔𝗹𝗹 𝗣𝗿𝗼𝗴𝗿𝗮𝗺 in 𝗕𝗮𝗿𝗮𝗻𝗴𝗮𝘆 𝗡𝗮𝗯𝘂𝗿𝗮𝗰𝗮𝗻, 𝗠𝗮𝘁𝗻𝗼𝗴, 𝗦𝗼𝗿𝘀𝗼𝗴𝗼𝗻!</h4>
+        </div>
+      </div>
+      <div class="experience" id="past">
+        
+      </div>
     </section>
 
     <section id="certifications">
