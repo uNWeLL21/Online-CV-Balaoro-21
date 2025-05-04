@@ -394,13 +394,13 @@ ul li {
 .education-section {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
   margin-top: 2rem;
 }
 
 .education-item {
-  width: 45%;
   margin-bottom: 1rem;
+  width: 50%;
+  vertical-align: top;
 }
 
 .education-item h3 {
@@ -413,6 +413,25 @@ ul li {
   margin: 0.5rem 0;
   font-size: 1rem;
   color: #d9d9d9;
+}
+
+/* Adjust the size of the education logos */
+.education-logo {
+  width: 200PX;
+  height: auto; /* Maintain aspect ratio */
+  font-size: 1.5rem;
+  color: #ffffff;
+  display: inline;
+  padding-left: 5px;
+  border-radius: 100%;
+}
+
+.education-data {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  gap: 20px;
+  width: 50%;
 }
 
 /* Add styles for the typing animation */
@@ -557,6 +576,7 @@ ul li {
 .experience-menu {
   display: flex;
   justify-content: left;
+  gap: 10px;
 }
 
 .experience-menu ul {
@@ -569,6 +589,9 @@ ul li {
   background: #000000b9;
   color: #fff;
   transition: background 0.3s ease;
+  border-radius: 20px;
+  width: 150px;
+  text-align: center;
 }
 
 .experience-menu ul li a {
@@ -593,4 +616,117 @@ ul li {
 /* Show the active experience section */
 .experience.active {
   display: grid;
+}
+
+@media (max-width: 768px) {
+  .education-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .education-data {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .education-logo {
+    width: 150px;
+    margin-bottom: 10px;
+  }
+
+  .education-item {
+    width: 100%;
+  }
+
+  .experience-menu {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .experience-menu ul li {
+    width: 150px;
+    text-align: center;
+  }
+}
+
+/* Updated styles for the contact section */
+#contact {
+  background: linear-gradient(135deg, #013449, #000133);
+  color: #fff;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.contact-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.contact-column {
+  flex: 1;
+  min-width: 300px;
+  margin: 10px;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.contact-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.contact-column ul li {
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+#contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+#contact-form input, #contact-form textarea {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background: #f9f9f9;
+  color: #333;
+}
+
+#contact-form input:focus, #contact-form textarea:focus {
+  outline: none;
+  border-color: #007BFF;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+#contact-form button {
+  padding: 10px;
+  font-size: 1rem;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#contact-form button:hover {
+  background-color: #0056b3;
+}
+
+/* Add hover effect for contact column */
+.contact-column:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
 }
