@@ -28,10 +28,11 @@ body {
   top: 0;
   width: 100%;
   z-index: 1000; /* Ensure it stays above other elements */
-  background: #000000c9;
+  background: #000218;
   color: #fff;
-  /* text-align: right; */
-  padding-right: 100px;
+  text-align: left;
+  padding-right: 20px;
+  padding-left: 20px;
 }
 
 .App-header ul {
@@ -44,9 +45,17 @@ body {
   font-weight: 500;
 }
 
+.logo{
+  margin-top: 5px;
+  position: inherit;
+  height: 40px;
+  width: auto;
+}
+
 .App-header ul li a {
   color: #fff;
   text-decoration: none;
+  vertical-align: middle;
 }
 
 /* Add hover effect for navigation menu items */
@@ -71,7 +80,7 @@ section {
   padding-right: 5%;
   max-width: 100%;
   background-color: #00000071;
-  margin: 40px;
+  margin: 30px;
   border-radius: 20px;
 }
 
@@ -264,6 +273,7 @@ ul li {
 .profile {
   align-items: center; /* Center align items */
   z-index: 999;
+  padding-top: 40px;
 }
 
 .profile img {
@@ -315,7 +325,7 @@ ul li {
   justify-content: center;
   width: 100%;
   height: 100%;
-  padding-top: 100px;
+  padding-top: 25px;
   z-index: 1000;
 }
 
@@ -417,10 +427,10 @@ ul li {
 
 /* Adjust the size of the education logos */
 .education-logo {
-  width: 200PX;
+  width: 150PX;
   height: auto; /* Maintain aspect ratio */
   font-size: 1.5rem;
-  color: #ffffff;
+  color: #ffffff00;
   display: inline;
   padding-left: 5px;
   border-radius: 100%;
