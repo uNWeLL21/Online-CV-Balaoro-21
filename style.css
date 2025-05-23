@@ -277,9 +277,8 @@ ul li {
 }
 
 .profile img {
-  width: 300px;
+  width: 375px;
   height: auto;
-  border-radius: 50%;
   object-fit: cover;
 }
 
