@@ -124,10 +124,18 @@
               const progress = skill.getAttribute("data-progress");
               const circle = skill.querySelector(".circle");
               const percentage = skill.querySelector(".percentage");
-
+              
               // Calculate the stroke-dashoffset based on progress
-              const offset = 283 - (283 * progress) / 100;
+              if(progress <= 50)
+              {
+                offset = 283 - (283 * (progress - 5)) / 100;
+              }
+              else
+              {
+                offset = 283 - (283 * (progress - 8)) / 100;
+              }
               circle.style.strokeDashoffset = offset;
+              
 
               // Update the percentage text
               percentage.textContent = `${progress}%`;
@@ -170,7 +178,7 @@
     
     <section id="about">
       <h2>About Me</h2>
-      <p>Hi! I'm Ralph Rey M. Balaoro, a 23-year-old undergraduate student at CCDI, Sorsogon. I am passionate about programming and technology. I have experience in various programming languages and am always eager to learn more.</p>  
+      <p>Hi! I'm Ralph Rey M. Balaoro, a 23-year-old graduate student of CCDI Sorsogon. I am passionate about programming and technology. I have experience in various programming languages and am always eager to learn more.</p>  
     </section>
 
     <section id="education">
